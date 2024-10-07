@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
+export default function App() {
   const [agenda, setAgenda] = useState([])
   const [mostrarTabela, setMostrarTabela] = useState(false)
 
@@ -21,36 +21,36 @@ function App() {
   return (
     <div>
       <h1>Agenda</h1>
-      <button onClick={buscarDados} className="btn btn-primary">
+      <button onClick={buscarDados}>
         Pesquisar
       </button>
 
       {mostrarTabela && (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>R.A</th>
-              <th>Nome</th>
-              <th>Nascimento</th>
-              <th>Idade</th>
-              <th>CPF</th>
+        <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Nascimento</th>
+            <th>Idade</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+           </tr>
+         </thead>
+        <tbody>
+          {agenda.map((el) => (
+            <tr key={el.id}>
+              <td>{el.id}</td>
+              <td>{el.nome}</td>
+              <td>{el.nascimento}</td>
+              <td>{el.idade} anos</td>
+              <td>{el.cpf}</td>
+              <td>{el.telefone}</td>
             </tr>
-          </thead>
-          <tbody>
-            {agenda.map((el) => (
-              <tr key={el.id}>
-                <td>{el.id}</td>
-                <td>{el.nome}</td>
-                <td>{el.nascimento}</td>
-                <td>{el.idade} anos</td>
-                <td>{el.cpf}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  )
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+    )
 }
-
-export default App 
