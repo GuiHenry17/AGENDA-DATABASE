@@ -3,20 +3,20 @@ import './App.css'
 
 function App() {
   const [agenda, setAgenda] = useState([])
-  const [mostrarTabela, setMostrarTabela] = useState(false) 
+  const [mostrarTabela, setMostrarTabela] = useState(false)
 
 
   const buscarDados = () => {
     fetch('http://localhost:5000/agenda')
       .then((response) => response.json())
       .then((data) => {
-        setAgenda(data) 
-        setMostrarTabela(true) 
+        setAgenda(data)
+        setMostrarTabela(true)
       })
       .catch((error) => {
-        console.error('Erro ao buscar a agenda:', error) 
-      }) 
-  } 
+        console.error('Erro ao buscar a agenda:', error)
+      })
+  }
 
   return (
     <div>
@@ -50,7 +50,7 @@ function App() {
         </table>
       )}
     </div>
-  ) 
+  )
 }
 
 export default App 
