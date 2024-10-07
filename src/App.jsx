@@ -37,13 +37,13 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {agenda.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.nome}</td>
-                <td>{item.nascimento}</td>
-                <td>{item.idade} anos</td>
-                <td>{item.cpf}</td>
+            {agenda.map((el) => (
+              <tr key={el.id}>
+                <td>{el.id}</td>
+                <td>{el.nome}</td>
+                <td>{el.nascimento}</td>
+                <td>{el.idade} anos</td>
+                <td>{el.cpf}</td>
               </tr>
             ))}
           </tbody>
