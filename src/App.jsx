@@ -43,7 +43,7 @@ export default function App() {
               <td>{el.id}</td>
               <td>{el.nome}</td>
               <td>{el.nascimento}</td>
-              <td>{el.idade} anos</td>
+              <td>{el.idade}</td>
               <td>{el.cpf}</td>
               <td>{el.telefone}</td>
             </tr>
